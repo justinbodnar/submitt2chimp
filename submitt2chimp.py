@@ -4,8 +4,10 @@
 
 # API information
 
+submittableURL = "https://api.submittable.com/v1/submitters?page=&count="
 submittableAPItoken = 0
 mailchimpAPItoken = 0
+
 
 # get list of recent submitters
 
