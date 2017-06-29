@@ -6,7 +6,8 @@ from submittable_api_client.submittable_api_client import SubmittableAPIClient
 
 # API information
 SubmittableAPIToken = 'REMOVED'
-Client = SubmittableAPIClient(username="books@etruscanpress.org", apitoken=SubmittableAPIToken)
+SubmittableUsername = 'REMOVED'
+Client = SubmittableAPIClient(username=SubmittableUsername, apitoken=SubmittableAPIToken)
 
 # get list of submitters
 submitters = Client.submitters(page=1, per_page=200)
