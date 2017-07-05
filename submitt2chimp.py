@@ -12,17 +12,17 @@ MCClient = MailChimp(cfg.MailChimpUsername, cfg.MailChimpAPIToken)
 
 
 # get list of submitters
-#submitters = Client.submitters(page=1, per_page=200)
-#print( str( submitters.count ) + " submitters loaded into memory" )
+SubmittableList = SClient.submitters(page=1, per_page=200)
+print( str( SubmittableList.count ) + " submitters loaded into memory" )
 
-#print list of emails
 #for item in submitters.items:
 #    print( item.email )
 
 # get MailChimp mailing list for comparison
-
+MailChimpList = list()
 for each in MCClient.lists.members.all(cfg.MailChimpMailingListID, get_all=True, fields="members.email_address")['members']:
-	print( each )
+	MailChimpList.append( each )
+print( str( len( MailChimpList ) ) + " subscribers loaded into memory" )
 
 # for each in recent submitters list
   # check if email exists in mailing list
